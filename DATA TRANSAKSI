@@ -1,0 +1,7 @@
+
+DATA TRANSAKSI
+SELECT pelanggan.namaPelanggan, pelanggan.namaKlub, pelanggan.noHP, lapangan.deskripsiLapangan, lapangan.kapasitas, pemesanan.DP, detailPemesanan.tglPemakaian, detailPemesanan.jamMulai, detailPemesanan.jamSelesai
+FROM (pelanggan INNER JOIN pemesanan ON pelanggan.idPelanggan = pemesanan.idPelanggan) INNER JOIN (lapangan INNER JOIN detailPemesanan ON lapangan.idLapangan = detailPemesanan.idLapangan) ON pemesanan.idPemesanan = detailPemesanan.idPemesanan;
+
+PEMBUATAN REPORT/VIEW TRANSAKSI PER NOMOR TRANSAKSI
+SELECT Query.[idDetailPemesanan], Query.[tanggalPemesanan], Query.[idPelanggan], Query.[namaPelanggan], Query.[noHP], Query.[namaKlub], Query.[idLapangan], Query.[sisaBayar], Query.[tglPemakaian], Query.[DP], Query.[totalBayar] FROM Query;
